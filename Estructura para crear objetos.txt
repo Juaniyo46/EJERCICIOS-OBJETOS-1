@@ -1,0 +1,6 @@
+Clase
+-Crear
+-Atributos (privados)
+-Constructores
+-Getters/Setters
+-ToString
