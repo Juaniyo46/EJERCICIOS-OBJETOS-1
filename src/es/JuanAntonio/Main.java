@@ -6,20 +6,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Password p1 = new Password(30);
+        Libro book1 = new Libro(8545231454123L, "El libro perdido", "Pedro Gonzalez", 256);
+        Libro book2 = new Libro(6234578412543L, "Don Quijote de la Mancha", "Miguel de Cervantes", 1500);
 
+        System.out.println(book1);
+        System.out.println(book2);
 
-        System.out.println(p1.getPassword());
-
-        System.out.println(p1.esFuerte());
-
-       /* Password p2 = new Password();
-
-        p2.setLongitud(9);
-        String pass = p2.generateRandom(p2.getLongitud());
-        p2.setPassword(p2.generateRandom(p2.getLongitud()));
-        System.out.println(p2);*/
-
+        if (book1.getNumPag()== book2.getNumPag()) System.out.println("Los libros tienen el mismo nuermo de páginas");
+        else if (book1.getNumPag() > book2.getNumPag()) System.out.println(book1.getTitle() + " tiene más páginas");
+        else if (book2.getNumPag() > book1.getNumPag()) System.out.println(book2.getTitle() + " tiene más páginas");
     }
 
 
