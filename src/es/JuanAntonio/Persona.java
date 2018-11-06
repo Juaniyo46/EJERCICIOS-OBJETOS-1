@@ -10,6 +10,8 @@ public class Persona {
     private double peso;
     private double altura;
 
+    public Persona(){}
+
     public Persona(String nombre, int edad, char sexo) {
         this.nombre = nombre;
         this.edad = edad;
@@ -78,11 +80,11 @@ public class Persona {
     public void calcularIMC (){
         double result = peso/Math.pow(altura,2);
         if (result<20){
-            System.out.println(-1);
+            System.out.println(-1 + " Está por debajo de su peso ideal");
         } else if (result>=20&&result<=25) {
-            System.out.println(0);
+            System.out.println(0 + " Está en su peso ideal");
         }else if (result>25){
-            System.out.println(1);
+            System.out.println(1 + " Tiene sobrepeso");
         }
     }
 
@@ -91,20 +93,25 @@ public class Persona {
         if (edad>=18){
             mayor = true;
         }
-        System.out.println(mayor);
+
+        if (mayor) {
+            System.out.println("Es mayor de edad");
+        } else {
+            System.out.println("No es mayor de edad");
+        }
     }
 
-    public void comprobarSexo (char sexo) {
+    public char comprobarSexo (char sexo) {
         if (sexo != 'H' && sexo != 'M') {
             sexo = 'H';
-        }
+        }  return sexo;
     }
 
     public String generaDNI(){
         int aleatorio = generaNumDni();
         char letra = generaLetraDni(aleatorio);
         String dni = ""+aleatorio + letra;
-        System.out.println();
+
         return dni;
 
     }
